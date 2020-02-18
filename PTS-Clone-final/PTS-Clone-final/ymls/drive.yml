@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# Title:      PGBlitz (Reference Title File)
+# Authors:    Admin9705, Deiteq, and many PGBlitz Contributors
+# URL:        https://pgblitz.com - http://github.pgblitz.com
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: 'Creating Folder - /mnt/{{drive}}'
+      file: 'path={{item}} state=directory mode=0755 owner=1000 group=1000'
+      with_items:
+        - '/mnt/{{drive}}'
+
+    - name: Register hdpath
+      shell: 'cat /var/plexguide/server.hd.path'
+      register: hdpath
+      
+    - name: Create Basic Directories
+      file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000 recurse=true'
+      with_items:
+        - '/var/plexguide/logs'
+        - '/var/plexguide/logs/drive'
+        - '/var/plexguide/logs/emergency'
+        - '/var/plexguide/logs/uploader'
+        - '/opt/plexguide/roles/log'
+      ignore_errors: yes
+
+    - name: 'Install - Service {{drive}}'
+      template:
+        src: '/opt/pgclone/mounts/drive.service'
+        dest: '/etc/systemd/system/{{drive}}.service'
+        force: yes
+
+    - name: 'Reload Service - {{drive}}'
+      systemd:
+        daemon_reload: yes
+        enabled: yes
+        state: reloaded
+        name: '{{drive}}'

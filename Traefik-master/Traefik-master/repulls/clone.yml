@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Title:      PTS Install base
+# Author(s):  MrDoobPG
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Cloning Core-APPS - From Installer
+      git:
+        repo: 'https://github.com/MHA-Team/Apps-Core'
+        dest: /opt/coreapps
+        version: 'master'
+        force: yes
+      ignore_errors: yes
+

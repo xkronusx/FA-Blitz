@@ -1,0 +1,16 @@
+- name: Creating folder
+  file: 'path={{item}} state=directory mode=0775 owner=1000 group=1000'
+  with_items:
+    - '/opt/appdata/filebrowser/'
+
+- name: 'Copying config'
+  shell: 'cp -r /opt/communityapps/apps/templates/filebrowser/filebrowser.json /opt/appdata/filebrowser/.filebrowser.json'
+
+- name: 'Making DB'
+  shell: 'cd /opt/appdata/filebrowser/ && touch database.db'
+
+# scripts permissions
+- name: 'Setting permissions for {{pgrole}}'
+  shell: 'chmod -R 775 /opt/appdata/{{pgrole}}'
+- name: 'set owner rights for {{pgrole}}'
+  shell: 'chown -cR 1000:1000 /opt/appdata/{{pgrole}}'

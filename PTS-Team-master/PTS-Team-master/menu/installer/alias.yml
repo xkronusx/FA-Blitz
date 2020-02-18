@@ -1,0 +1,78 @@
+#!/bin/bash
+#
+# Title:      PGBlitz (Reference Title File)
+# Author(s):  Admin9705 - Deiteq
+# URL:        https://pgblitz.com - http://github.pgblitz.com
+# GNU:        General Public License v3.0
+################################################################################
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Nano PGLog
+      template:
+        src: pglog
+        dest: /bin/pglog
+        force: yes
+        mode: 0775
+
+    - name: server reboot
+      template:
+        src: reboot
+        dest: /bin/reboot
+        force: yes
+        mode: 0775
+
+    - name: list systemd services
+      template:
+        src: slist
+        dest: /bin/slist
+        force: yes
+        mode: 0775
+        owner: root
+
+    - name: update server
+      template:
+        src: update
+        dest: /bin/update
+        force: yes
+        mode: 0775
+
+    - name: upgrade server
+      template:
+        src: upgrade
+        dest: /bin/upgrade
+        force: yes
+        mode: 0775
+        owner: root
+
+    - name: install appname
+      template:
+        src: install
+        dest: /bin/install
+        force: yes
+        mode: 0775
+        owner: root
+
+    - name: autoremove unused packages after app install
+      template:
+        src: autoremove
+        dest: /bin/autoremove
+        force: yes
+        mode: 0775
+        owner: root
+
+    - name: Prune docker containers appname
+      template:
+        src: prune
+        dest: /bin/prune
+        force: yes
+        mode: 0775
+        owner: root
+
+    - name: Install Backup
+      template:
+        src: backup
+        dest: /bin/backup
+        force: yes
+        mode: 0775
