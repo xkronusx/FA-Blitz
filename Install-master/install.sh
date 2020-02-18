@@ -2,11 +2,12 @@
 ###############################################################################
 # Title: PTS Base installer
 # Coder : 	MrDoob PTS Main Developer
+# Rework Coder : 	xkronusx FA-Blitz
 # GNU: General Public License v3.0E
 #
 ################################################################################
-### FUNCTIONS START #####################################################
-###################################
+### START #####################################################
+################################################################################
 sudocheck() {
   if [[ $EUID -ne 0 ]]; then
 tee <<-EOF
@@ -20,17 +21,11 @@ EOF
 agreebase() {
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⛔️ READ THIS NOTE 
+⛔️ READ THIS NOTE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-The PTS team wishes to advise that in  installing PTS you accept the risk of 
-any data being transferred to your mounted Google Drive account being 
-removed by Google if you are illegally using an Education account 
-or not adhering to the Gsuite Business Terms of Service 
-by having less than 5 users. 
-
-We do not condone or support the use of education accounts specifically 
-and we can refuse support at our discretion
+The FA-Blitz tean advises you that you accept the risk of any data loss in the use of
+the FA-Blitz system and programs. We hope you enjoy the use of this system.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
@@ -38,9 +33,9 @@ timer
 doneokay
 }
 timer() {
-seconds=90; date1=$((`date +%s` + $seconds)); 
-while [ "$date1" -ge `date +%s` ]; do 
-  echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r"; 
+seconds=30; date1=$((`date +%s` + $seconds));
+while [ "$date1" -ge `date +%s` ]; do
+  echo -ne "$(date -u --date @$(($date1 - `date +%s` )) +%H:%M:%S)\r";
 done
 }
 existpg() {
@@ -95,7 +90,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⌛ WOAH! PTS noticed your current system has less then 50GB drive space !
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-We have recognized less than 50GB of storage space, 
+We have recognized less than 50GB of storage space,
 this can lead to problems.
 
 Please make sure that there is enough space available.
@@ -155,7 +150,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🌎  INSTALLING: PTS Notice
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-By installing, you are agreeing to the terms and 
+By installing, you are agreeing to the terms and
 conditions of the GNUv3 License!
 
 Everyone is welcome and everyone can help make it better,
@@ -297,7 +292,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EOF
 }
-#####    
+#####
 editionpts() {
 echo -ne '                         (0%)\r'
 # Delete If it Exist for Cloning
