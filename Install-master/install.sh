@@ -157,11 +157,6 @@ Everyone is welcome and everyone can help make it better,
 so we like to greet you as a new / old user
 
 		┌─────────────────────────────────────┐
-		│                                     |
-		| A special thanks to MrDoob and Admin|
-		| for letting this project burn so    |
-		| much that we can now ensure success.|
-		│                                     |
 		│ Thanks to for your contributions:   │
 		│                                     │
 		│ Davaz, Deiteq, FlickerRate,         │
@@ -242,7 +237,7 @@ if [[ $(lsb_release -si) == "Debian" ]]; then
 	add-apt-repository main >/dev/null 2>&1
 	add-apt-repository non-free >/dev/null 2>&1
 	add-apt-repository contrib >/dev/null 2>&1
-	wget -qN https://raw.githubusercontent.com/MHA-Team/Install/master/source/ansible-debian-ansible.list /etc/apt/sources.list.d/
+	wget -qN https://raw.githubusercontent.com/xkronusx/FA-Blitz/master/Install-master/source/ansible-debian-ansible.list /etc/apt/sources.list.d/
 elif [[ $(lsb_release -si) == "Ubuntu" ]]; then
 	add-apt-repository main >/dev/null 2>&1
 	add-apt-repository universe >/dev/null 2>&1
@@ -307,8 +302,15 @@ rm -rf /opt/pgstage/place.holder >/dev/null 2>&1
 edition=master
 ##fast change the editions
 echo -ne '#######                   (30%)\r'
-git clone -b $edition --single-branch https://github.com/MHA-Team/Install.git /opt/pgstage 1>/dev/null 2>&1
-git clone https://github.com/MHA-Team/PTS-Update.git /opt/ptsupdate 1>/dev/null 2>&1
+git clone https://github.com/xkronusx/FA-Blitz.git /opt/FA-Blitz-Files 1>/dev/null 2>&1
+mkdir -p /opt/pgstage
+mkdir -p /opt/ptsupdate
+mv /opt/FA-Blitz-Files/Install-master/* /opt/pgstage
+mv /opt/FA-Blitz-Files/PTS-Update-master/* /opt/ptsupdate
+##Old repos##
+#git clone -b $edition --single-branch https://github.com/MHA-Team/Install.git /opt/pgstage 1>/dev/null 2>&1
+#git clone https://github.com/MHA-Team/PTS-Update.git /opt/ptsupdate 1>/dev/null 2>&1
+##
 echo -ne '##########                (40%)\r'
 mkdir -p /var/plexguide/logs
 echo "" >/var/plexguide/server.ports
@@ -360,7 +362,7 @@ fi
 
 endingnonexist() {
 logfile=/var/log/log-install.txt
-chk=$(figlet "<<< M H A - TEAM >>>" | lolcat)
+chk=$(figlet "<<< F A - Blitz >>>" | lolcat)
 touch /var/plexguide/new.install
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -387,7 +389,7 @@ EOF
 ###############
 endingexist() {
 logfile=/var/log/log-install.txt
-chk=$(figlet "<<< M H A - TEAM >>>" | lolcat)
+chk=$(figlet "<<< F A - Blitz >>>" | lolcat)
 touch /var/plexguide/new.install
 tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
