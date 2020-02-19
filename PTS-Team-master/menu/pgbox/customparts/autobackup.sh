@@ -2,7 +2,6 @@
 #
 # Title:      MHA-Team
 # Author(s):  iDoMnCi
-# URL:        https://github.com/MHA-Team/MHA-Team
 # GNU:        General Public License v3.0
 ################################################################################
 
@@ -52,7 +51,7 @@ appselect() {
   ### List out installed apps
   num=0
   tree -d -L 1 /opt/appdata | awk '{print $2}' | tail -n +2 | head -n -2 >/var/plexguide/app.list
-  
+
   sed -i -e "/plexguide/d" /var/plexguide/app.list
   sed -i -e "/oauth/d" /var/plexguide/app.list
   sed -i -e "/traefik/d" /var/plexguide/app.list

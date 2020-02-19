@@ -9,11 +9,8 @@ transportselect() {
     tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💪 Set Clone Method 
+💪 Set Clone Method
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-NOTE: Please visit the link and understand what your doing first!
-
-LINK : https://github.com/MHA-Team/PTS-Team/wiki/PTS-Clone
 
 [1] Move  Unencrypt: Data > GDrive | Novice  | 750GB Daily Transfer Max
 [2] Move  Encrypted: Data > GDrive | Novice  | 750GB Daily Transfer Max

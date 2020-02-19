@@ -13,10 +13,11 @@
 
     - name: Cloning Core Apps
       git:
-        repo: 'https://github.com/MHA-Team/Apps-Core'
-        dest: /opt/coreapps
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         version: 'master'
         force: yes
+      command: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps
 
-    - name: Set Permission and Owner 
+    - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps'

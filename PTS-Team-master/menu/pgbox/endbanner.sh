@@ -75,7 +75,7 @@ if [[ "$program" == *"sonarr"* ]] || [[ "$program" == *"radarr"* ]] || [[ "$prog
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 💬 Manual Configuration Required
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-      
+
   $program requires additional manual configuration!
 EOF
   if [[ "$program" == *"sonarr"* ]] || [[ "$program" == *"radarr"* ]] || [[ "$program" == *"lidarr"* ]] || [[ "$program" == *"qbittorrent"* ]]; then
@@ -87,8 +87,6 @@ EOF
   This will result in files being copied instead of moved, and it will cause other issues.
 
   The mappings are on the download client settings (advanced setting), at the bottom of the page.
- 
-  Visit https://github.com/MHA-Team/PTS-Team/wiki/Remote-Path-Mappings for more information.
 
 EOF
   fi
@@ -98,8 +96,6 @@ EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🌍 Visit the wiki for instructions on how to configure $program.
-
- https://github.com/MHA-Team/PTS-Team/wiki/$program
 
 EOF
 fi
@@ -117,7 +113,7 @@ cclean=$(cat /var/plexguide/cloneclean)
 
   for incomplete downloads $program used the folder $hdpath/incomplete/nzb
   for finished downloads $program used the folder $hdpath/downloads/nzb
-  
+
   beware the cloneclean is set to $cclean min
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -144,7 +140,7 @@ tclean=$(($cclean*2))
 
   for incomplete downloads $program used the folder $hdpath/incomplete/torrent
   for finished downloads $program used the folder $hdpath/downloads/torrent
-  
+
   beware the cloneclean is set to $tclean min
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -157,7 +153,7 @@ if [ "$program" == "plex" ]; then
 💬 Manual Configuration Required
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-we prefer using plex_autoscan, unlike other alternatives, 
+we prefer using plex_autoscan, unlike other alternatives,
 that does not put a lot of pressure on the API of your Google Account.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -4,7 +4,7 @@
 <meta http-equiv="refresh" content="25" charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<meta name="robots" content="noindex, nofollow, noarchive" />
-    <meta http-equiv="cache-control" content="no-cache" /> 
+    <meta http-equiv="cache-control" content="no-cache" />
 <title>Com-UI</title>
 <link rel="icon" type="image/png" href="https://i.imgur.com/T7OQsZz.png" sizes="32x32">
 <style type="text/css">
@@ -133,10 +133,6 @@ padding: 10px;
 </style>
 </head>
 <body text="#FFFFFF">
-<ul class="navigation">
-    <li><a class="active" href="https://github.com/MHA-Team/PTS-Team/wiki">PTS-Wiki</a></li>
-    <li><a href="https://discord.gg/cKsMwMZ">Discord</a></li>
-</ul>
 <div class="image">
 <table width="100%" align="center" cellpadding="5" cellspacing="0">
   <tbody>
@@ -144,7 +140,7 @@ padding: 10px;
 		<td width="876" align="center">
 			<h1>
 				<strong style="color: #000000; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: xx-large; font-weight: bolder;">Community UI<br>
-					<span style="color: #053F00; font-size: small">Auto-Refreshes Every 25 Seconds</span>	
+					<span style="color: #053F00; font-size: small">Auto-Refreshes Every 25 Seconds</span>
 					<br>
 				</strong>
 			</h1>
@@ -198,7 +194,7 @@ padding: 10px;
               <td width="100%" height="30" style="color: #E8DD06; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-weight: bolder; font-size: large; text-align: left;">RClone | Transport & Checks</td>
             </tr>
           </tbody>
-        </table>					
+        </table>
 		     <table width="100%" height="44" border="1" align="center" cellpadding="0" cellspacing="0">
 						<tbody>
 							<tr>
@@ -233,7 +229,7 @@ padding: 10px;
 				Basic Information
 			</td></tr></tbody>
         </table>
-					<table width="100%" height="44" border="1" align="center" cellpadding="0" cellspacing="0">			
+					<table width="100%" height="44" border="1" align="center" cellpadding="0" cellspacing="0">
 						<tbody>
 							<tr>
 							    <td width="15%" bgcolor="#000000" style="font-size: medium">&nbsp;&nbsp;Edition</td>
@@ -306,7 +302,7 @@ padding: 10px;
 									</span>
 								</td>
 							</tr>
-						</tbody>			
+						</tbody>
 					</table>
 					<table width="100%" height="40" border="1" align="center" cellpadding="0" cellspacing="0">
 						<tbody> <!--// GDRIVE -->
@@ -323,7 +319,7 @@ padding: 10px;
 										<?php $output = shell_exec('tail -n1 /plexguide/gdcrypt.log');echo "<pre>$output</pre>";?>
 									</span>
 								</td>
-							</tr>	
+							</tr>
 						</tbody>
 					</table>
 					<table width="100%" height="40" border="1" align="center" cellpadding="0" cellspacing="0">
@@ -342,7 +338,7 @@ padding: 10px;
 									</span>
 								</td>
 							</tr>
-						</tbody>			
+						</tbody>
 					</table>
 				<br>
 					<table width="100%" height="40" border="1" align="center" cellpadding="0" cellspacing="0">
@@ -377,9 +373,9 @@ padding: 10px;
 									<span class="test" style="color: #FFFFFF; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-size: medium;">
 										<?php $output = shell_exec('tail -n1 /plexguide/tdcrypt.log');echo "<pre>$output</pre>";?>
 									</span>
-								</td>			
+								</td>
 							</tr>
-						</tbody>			
+						</tbody>
 					</table>
 					<table width="100%" height="42" border="1" align="center" cellpadding="0" cellspacing="0">
 						<tbody>
@@ -397,11 +393,11 @@ padding: 10px;
 									</span>
 								</td>
 							</tr>
-						</tbody>			
+						</tbody>
 					</table>
 				</div>
 			</td>
-		</tr>			
+		</tr>
 	</tbody>
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -417,7 +413,7 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
-	
+
 var autoUploadScroll = document.getElementsByClassName("auto")[0];
 var autoLogsScroll = document.getElementsByClassName("autologs")[0];
 autoUploadScroll.scrollTop = autoUploadScroll.scrollHeight;

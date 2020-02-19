@@ -21,7 +21,8 @@ EOF
 
 downloadpg() {
   rm -rf /opt/plexguide
-  git clone --single-branch https://github.com/MHA-Team/PTS-Team.git /opt/plexguide  1>/dev/null 2>&1
+  git clone https://github.com/xkronusx/FA-Blitz.git /opt/FA-Blitz-Files 1>/dev/null 2>&1
+  mv /opt/FA-Blitz-Files/PTS-Team-master/* /opt/plexguide
   ansible-playbook /opt/plexguide/menu/version/missing_pull.yml
   ansible-playbook /opt/plexguide/menu/alias/alias.yml  1>/dev/null 2>&1
   rm -rf /opt/plexguide/place.holder >/dev/null 2>&1

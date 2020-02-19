@@ -57,8 +57,6 @@ EOF
 🚀 rClone - Client ID
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Visit https://github.com/MHA-Team/PTS-Team/wiki/Google-OAuth-Keys in order to generate your Client ID! 
-
 Ensure that you input the CORRECT Client ID from your current project!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -80,8 +78,6 @@ keyinputsecret() {
 🚀 rClone - Secret
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Visit https://github.com/MHA-Team/PTS-Team/wiki/Google-OAuth-Keys in order to generate your Secret! 
-
 Ensure thatyou input the CORRECT Secret ID from your current project!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -97,7 +93,7 @@ EOF
     tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 rClone - Output 
+🚀 rClone - Output
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 CLIENT ID
@@ -162,7 +158,7 @@ publicsecretchecker() {
 
 💬  Public & Secret Key - NOT SET!
 
-NOTE: Nothing can occur unless the public & secret key are set! 
+NOTE: Nothing can occur unless the public & secret key are set!
 Without setting them; PTS cannot create keys, or create rclone configurations
 to mount the required drives!
 

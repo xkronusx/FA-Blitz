@@ -11,13 +11,14 @@
 
     - name: 'Cloning PTS Install files'
       git:
-        repo: 'https://github.com/MHA-Team/Install'
-        dest: '/opt/pgstage'
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         clone: yes
         version: 'master'
         force: yes
         update: yes
       become: yes
+      command: mv /opt/FA-Blitz-Files/Install-master/* /opt/pgstage
 
     - stat:
         path: /opt/pgstage

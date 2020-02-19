@@ -23,12 +23,13 @@
 
     - name: 'Installing Version {{serverid.stdout}}'
       git:
-        repo: 'https://github.com/MHA-Team/PTS-Team'
-        dest: '/opt/plexguide'
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         version: '{{serverid.stdout}}'
         force: yes
       when: not serverid.stdout == "edge"
       ignore_errors: True
+      command: mv /opt/FA-Blitz-Files/PTS-Team-master/* /opt/plexguide
 
     - stat:
         path: /opt/plexguide/menu

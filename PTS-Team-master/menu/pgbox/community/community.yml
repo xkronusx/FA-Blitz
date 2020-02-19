@@ -13,10 +13,11 @@
 
     - name: Cloning Community Apps
       git:
-        repo: 'https://github.com/MHA-Team/Apps-Community'
-        dest: /opt/communityapps
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         version: 'master'
         force: yes
+      command: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
 
-    - name: Set Permission and Owner 
+    - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/communityapps && chmod -R 775 /opt/communityapps'

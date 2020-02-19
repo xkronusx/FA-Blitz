@@ -10,9 +10,9 @@
   tasks:
     - name: Cloning Core-APPS - From Installer
       git:
-        repo: 'https://github.com/MHA-Team/Apps-Core'
-        dest: /opt/coreapps
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         version: 'master'
         force: yes
       ignore_errors: yes
-
+      command: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps

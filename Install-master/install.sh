@@ -307,10 +307,6 @@ mkdir -p /opt/pgstage
 mkdir -p /opt/ptsupdate
 mv /opt/FA-Blitz-Files/Install-master/* /opt/pgstage
 mv /opt/FA-Blitz-Files/PTS-Update-master/* /opt/ptsupdate
-##Old repos##
-#git clone -b $edition --single-branch https://github.com/MHA-Team/Install.git /opt/pgstage 1>/dev/null 2>&1
-#git clone https://github.com/MHA-Team/PTS-Update.git /opt/ptsupdate 1>/dev/null 2>&1
-##
 echo -ne '##########                (40%)\r'
 mkdir -p /var/plexguide/logs
 echo "" >/var/plexguide/server.ports

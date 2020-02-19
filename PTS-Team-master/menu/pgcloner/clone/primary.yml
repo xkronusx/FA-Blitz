@@ -25,15 +25,14 @@
 
     - name: Clone Role
       git:
-        repo: 'https://github.com/MHA-Team/{{pname.stdout}}'
-        dest: '/opt/{{prole.stdout}}'
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         version: '{{pversion.stdout}}'
         force: yes
+      command: mv /opt/FA-Blitz-Files/PTS-Clone-final/* /opt/pgclone
 
     - name: 'Setting permissions on scripts'
       shell: 'chmod -R 775 /opt/{{prole.stdout}}'
 
     - name: 'Setting permissions on scripts'
       shell: 'chown -cR 1000:1000 /opt/{{prole.stdout}}'
-
-

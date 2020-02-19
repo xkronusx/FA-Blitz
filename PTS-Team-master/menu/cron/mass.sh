@@ -49,7 +49,6 @@ question1() {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ⌛ PTS Cron - Schedule Cron Jobs (Backups) | Mass Program Interface
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚡ Reference: https://github.com/MHA-Team/PTS-Team/wiki/PTS-Cron
 
 [1] No  [Skip   - All Cron Jobs]
 [2] Yes [Manual - Select for Each App]
