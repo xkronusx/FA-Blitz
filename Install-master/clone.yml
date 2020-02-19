@@ -17,13 +17,14 @@
 
     - name: 'Cloning PTS Install files'
       git:
-        repo: 'https://github.com/MHA-Team/PTS-Team'
-        dest: /opt/plexguide
+        repo: 'https://github.com/xkronusx/FA-Blitz'
+        dest: /opt/FA-Blitz-Files
         clone: yes
         version: 'master'
         force: yes
         update: yes
       become: yes
+      command: mv /opt/FA-Blitz-Files/Install-master/* /opt/plexguide
 
     - stat:
         path: /opt/pgstage
@@ -51,13 +52,9 @@
       when: pathcheck.stat.exists
 
     - name: Cloning Community Apps
-      git:
-        repo: 'https://github.com/MHA-Team/Apps-Community'
-        dest: /opt/communityapps
-        version: 'master'
-        force: yes
+      command: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
 
-    - name: Set Permission and Owner 
+    - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/communityapps && chmod -R 775 /opt/communityapps'
 
     - name: Check if Image Variable Exists
@@ -70,11 +67,7 @@
       when: pathcheck.stat.exists
 
     - name: Cloning Core Apps
-      git:
-        repo: 'https://github.com/MHA-Team/Apps-Core'
-        dest: /opt/coreapps
-        version: 'master'
-        force: yes
+    command: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps
 
-    - name: Set Permission and Owner 
+    - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps'
