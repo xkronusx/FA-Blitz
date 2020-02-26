@@ -3,6 +3,11 @@
 # Title:      FA-Blitz
 # Author(s):  xkronusx
 # GNU:        General Public License v3.0
+# Run command
+# sudo dhclient eth0
+# or
+# sudo dhclient enp0s3
+# if booted OS network isn't connecting
 ################################################################################
 ---
 - hosts: localhost
