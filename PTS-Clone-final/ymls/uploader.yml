@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Title:      Docker Uploader 
+# Title:      Docker Uploader
 # Author(s):  PhyskX
 # CoAuthot:   MrDoob
 # GNU:        General Public License v3.0
@@ -22,9 +22,6 @@
     - name: 'Including cleaner job'
       include_tasks: './cleaner.yml'
 
-    - name: 'Including key and rclone job'
-      include_tasks: './key.yml'
-      
     - name: 'Remove Obsolete Cron'
       include_tasks: './cron.yml'
 
@@ -52,7 +49,6 @@
         pg_volumes:
           - '/opt/appdata/{{pgrole}}/:/config'
           - '/mnt/unionfs:/unionfs:shared'
-          - '/mnt/move:/move:shared'
 
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
