@@ -74,6 +74,8 @@
         devices: "{{ '/dev/dri:/dev/dri' if dev_dri.stat.exists == True | default(false) else omit }}"
         volumes: '{{pg_volumes}}'
         env: '{{pg_env}}'
+        etc_hosts:
+          { 'mf.svc.nhl.com': '3.214.88.127', 'playback.svcs.mlb.com': '13.226.139.89' }
         restart_policy: unless-stopped
         networks:
           - name: plexguide
