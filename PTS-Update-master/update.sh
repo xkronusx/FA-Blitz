@@ -32,7 +32,8 @@ mainstart() {
 
   pgnumber=$(cat /var/plexguide/pg.number)
   versions=$(cat /opt/pgstage/versions.sh)
-  release="$(curl -s https://api.github.com/repos/PTS-Team/PTS-Team/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')"
+  # Remove release line until can verify usage
+  #release="$(curl -s https://api.github.com/repos/PTS-Team/PTS-Team/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')"
 
   tee <<-EOF
 
@@ -127,7 +128,7 @@ owned() {
 }
 
 check() {
- bash /opt/plexguide/menu/interface/ending.sh 
+ bash /opt/plexguide/menu/interface/ending.sh
 file="/opt/plexguide/menu/pg.yml"
   if [[ -f $file ]]; then
 printf '
@@ -142,4 +143,3 @@ printf '
 ' >>/var/plexguide/logs/pg.log
  else ansible-playbook /opt/plexguide/menu/version/missing_pull.yml; fi
 }
-
