@@ -302,6 +302,7 @@ rm -rf /opt/pgstage/place.holder >/dev/null 2>&1
 edition=master
 ##fast change the editions
 echo -ne '#######                   (30%)\r'
+rmdir /opt/FA-Blitz-Files/*
 git clone https://github.com/xkronusx/FA-Blitz.git /opt/FA-Blitz-Files 1>/dev/null 2>&1
 mkdir -p /opt/pgstage
 mkdir -p /opt/ptsupdate
