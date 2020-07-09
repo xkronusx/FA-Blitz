@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Title:      Docker Uploader 
+# Title:      Docker Uploader
 # Author(s):  PhyskX
 # CoAuthot:   MrDoob
 # GNU:        General Public License v3.0
@@ -30,7 +30,7 @@
   shell: "kill -9 {{ item }}"
   with_items: "{{ killed_processes.results | select('failed') | map(attribute='item') | list }}"
 
-- name: 'Install CloceClean Service'
+- name: 'Install CloneClean Service'
   template:
     src: /opt/pgclone/scripts/cloneclean.service.j2
     dest: /etc/systemd/system/cloneclean.service
