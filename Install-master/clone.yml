@@ -29,7 +29,7 @@
       shell: mv /opt/FA-Blitz-Files/Install-master/* /opt/plexguide
 
     - name: Set Permission and Owner
-      shell: 'chown -R 1000:1000 /opt/plexguide && chmod -R 775 /opt/plexguide'
+      shell: chown -R 1000:1000 /opt/plexguide && chmod -R 775 /opt/plexguide
 
     - stat:
         path: /opt/pgstage
@@ -56,10 +56,16 @@
       shell: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
 
     - name: Set Permission and Owner
-      shell: 'chown -R 1000:1000 /opt/communityapps && chmod -R 775 /opt/communityapps'
+      shell: chown -R 1000:1000 /opt/communityapps && chmod -R 775 /opt/communityapps
 
     - name: Cloning Core Apps
       shell: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps
 
     - name: Set Permission and Owner
-      shell: 'chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps'
+      shell: chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps
+
+    - name: Cloning Menu files
+      shell: mv /opt/FA-Blitz-Files/PTS-Team-master/* /opt/plexguide
+
+    - name: Set Permission and Owner
+      shell: chown -R 1000:1000 /opt/plexguide && chmod -R 775 /opt/plexguide
