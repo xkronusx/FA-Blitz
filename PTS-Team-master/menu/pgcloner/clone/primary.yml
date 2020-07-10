@@ -29,7 +29,9 @@
         dest: /opt/FA-Blitz-Files
         version: '{{pversion.stdout}}'
         force: yes
-      command: mv /opt/FA-Blitz-Files/PTS-Clone-final/* /opt/pgclone
+
+    - name: Cloning Role2
+      shell: mv /opt/FA-Blitz-Files/PTS-Clone-final/* /opt/pgclone
 
     - name: 'Setting permissions on scripts'
       shell: 'chmod -R 775 /opt/{{prole.stdout}}'

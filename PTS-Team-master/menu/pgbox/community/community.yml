@@ -17,7 +17,9 @@
         dest: /opt/FA-Blitz-Files
         version: 'master'
         force: yes
-      command: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
+
+    - name: Cloning Community Apps2
+      shell: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
 
     - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/communityapps && chmod -R 775 /opt/communityapps'
