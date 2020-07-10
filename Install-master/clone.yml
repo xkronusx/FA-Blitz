@@ -67,7 +67,7 @@
       when: pathcheck.stat.exists
 
     - name: Cloning Core Apps
-    shell: 'mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps'
+      shell: 'mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps'
 
     - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps'
