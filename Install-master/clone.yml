@@ -24,7 +24,7 @@
         force: yes
         update: yes
       become: yes
-      command: mv /opt/FA-Blitz-Files/Install-master/* /opt/plexguide
+      shell: 'mv /opt/FA-Blitz-Files/Install-master/* /opt/plexguide'
 
     - stat:
         path: /opt/pgstage
@@ -52,7 +52,7 @@
       when: pathcheck.stat.exists
 
     - name: Cloning Community Apps
-      command: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
+      shell: 'mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps'
 
     - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/communityapps && chmod -R 775 /opt/communityapps'
@@ -67,7 +67,7 @@
       when: pathcheck.stat.exists
 
     - name: Cloning Core Apps
-    command: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps
+    shell: 'mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps'
 
     - name: Set Permission and Owner
       shell: 'chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps'
