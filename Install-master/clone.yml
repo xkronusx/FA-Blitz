@@ -47,11 +47,6 @@
         - '/opt/pgstage/LICENSE'
         - '/opt/pgstage/README.md'
 
-    - name: Check if Image Variable Exists
-      stat:
-        path: '/opt/communityapps'
-      register: pathcheck
-
     - name: Cloning Community Apps
       shell: mv /opt/FA-Blitz-Files/Apps-Community-master/* /opt/communityapps
 
