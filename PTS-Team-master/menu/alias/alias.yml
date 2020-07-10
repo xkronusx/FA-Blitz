@@ -152,13 +152,6 @@
         force: yes
         mode: 0775
 
-    - name: GCE 
-      template:
-        src: gce
-        dest: /bin/gce
-        force: yes
-        mode: 0775
-
     - name: purge old Journal files
       template:
         src: jpurge
@@ -173,7 +166,7 @@
         force: yes
         mode: 0775
 
-    - name: automatic backup /opt/appdata 
+    - name: automatic backup /opt/appdata
       template:
         src: autobackup
         dest: /bin/autobackup
