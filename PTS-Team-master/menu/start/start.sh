@@ -33,7 +33,6 @@ variable() {
 primestart() {
   pcloadletter
   varstart
-  gcetest
 }
 
 wisword=$(/usr/games/fortune -as | sed "s/^/ /")
@@ -66,7 +65,7 @@ varstart() {
   variable $filevg/transcode.path "standard"
   variable $filevg/pgclone.transport "NOT-SET"
   variable $filevg/plex.claim ""
-  
+
   #### Temp Fix - Fixes Bugged AppGuard
   serverht=$(cat /var/plexguide/server.ht)
   if [ "$serverht" == "NOT-SET" ]; then
@@ -105,9 +104,6 @@ varstart() {
   ansible --version | head -n +1 | awk '{print $2'} >$filevg/pg.ansible
   docker --version | head -n +1 | awk '{print $3'} | sed 's/,$//' >$filevg/pg.docker
   lsb_release -si >$filevg/pg.os
-  
-  file="/var/plexguide/gce.false"
-  if [ -e "$file" ]; then echo "No" >$filevg/pg.gce; else echo "Yes" >$filevg/pg.gce; fi
 
   # Call Variables
   edition=$(cat /var/plexguide/pg.edition)
@@ -145,13 +141,6 @@ varstart() {
   echo "$capacity" >$filevg/pg.capacity
 }
 
-gcetest(){
-gce=$(cat /var/plexguide/pg.server.deploy)
-
-if [[ $gce == "feeder" ]]; then
-menuprime1
-else menuprime2; fi
-}
 
 menuprime1() {
   transport=$(cat /var/plexguide/pg.transport)
@@ -165,26 +154,6 @@ menuprime1() {
 
 🌵 Disk Used Space: $used of $capacity | $percentage Used Capacity
 EOF
-
-  # Displays Second Drive If GCE
-  edition=$(cat /var/plexguide/pg.server.deploy)
-  if [ "$edition" == "feeder" ]; then
-    used_gce=$(df -h /mnt --local | tail -n +2 | awk '{print $3}')
-    capacity_gce=$(df -h /mnt --local | tail -n +2 | awk '{print $2}')
-    percentage_gce=$(df -h /mnt --local | tail -n +2 | awk '{print $5}')
-    echo " GCE Disk Used Space: $used_gce of $capacity_gce | $percentage_gce Used Capacity"
-  fi
-
-  disktwo=$(cat "/var/plexguide/server.hd.path")
-  if [ "$edition" != "feeder" ]; then
-    used_gce2=$(df -h "$disktwo" --local | tail -n +2 | awk '{print $3}')
-    capacity_gce2=$(df -h "$disktwo" --local | tail -n +2 | awk '{print $2}')
-    percentage_gce2=$(df -h "$disktwo" --local | tail -n +2 | awk '{print $5}')
-
-    if [[ "$disktwo" != "/mnt" ]]; then
-      echo " 2nd Disk Used Space: $used_gce2 of $capacity_gce2 | $percentage_gce2 Used Capacity"
-    fi
-  fi
 
   # Declare Ports State
   ports=$(cat /var/plexguide/server.ports)
@@ -240,26 +209,6 @@ menuprime2() {
 🌵 Disk Used Space: $used of $capacity | $percentage Used Capacity
 EOF
 
-  # Displays Second Drive If GCE
-  edition=$(cat /var/plexguide/pg.server.deploy)
-  if [ "$edition" == "feeder" ]; then
-    used_gce=$(df -h /mnt --local | tail -n +2 | awk '{print $3}')
-    capacity_gce=$(df -h /mnt --local | tail -n +2 | awk '{print $2}')
-    percentage_gce=$(df -h /mnt --local | tail -n +2 | awk '{print $5}')
-    echo " GCE Disk Used Space: $used_gce of $capacity_gce | $percentage_gce Used Capacity"
-  fi
-
-  disktwo=$(cat "/var/plexguide/server.hd.path")
-  if [ "$edition" != "feeder" ]; then
-    used_gce2=$(df -h "$disktwo" --local | tail -n +2 | awk '{print $3}')
-    capacity_gce2=$(df -h "$disktwo" --local | tail -n +2 | awk '{print $2}')
-    percentage_gce2=$(df -h "$disktwo" --local | tail -n +2 | awk '{print $5}')
-
-    if [[ "$disktwo" != "/mnt" ]]; then
-      echo " 2nd Disk Used Space: $used_gce2 of $capacity_gce2 | $percentage_gce2 Used Capacity"
-    fi
-  fi
-
   # Declare Ports State
   ports=$(cat /var/plexguide/server.ports)
 
@@ -274,7 +223,7 @@ EOF
 [3]  PTS-Shield     : Enable Google's OAuthentication Protection
 [4]  PTS-Clone      : Mount Transport
 [5]  PTS-Apps       : Apps ~ Core, Community & Removal
-[6]  CBOX-PAS       : PlexAutoScan 
+[6]  CBOX-PAS       : PlexAutoScan
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [7]  PTS-WordPress  : Deploy WordPress Instances
 [8]  PTS-Vault      : Backup & Restore
@@ -283,7 +232,7 @@ EOF
 [10] CBOX-PDUPE     : Find and delete duplicate files in Plex
 [11] Traktarr       : Fill Sonarr/Radarr over Trakt lists.
 [12] Plex Patrol    : Kick transcodes (audio or video or both)
-[13] Settings 
+[13] Settings
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [Z]  Exit
 

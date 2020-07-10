@@ -15,7 +15,6 @@ source /opt/plexguide/menu/functions/update.sh
 pginstall() {
   versionubucheck
   updateprime
-  gcecheck
   core pythonstart
   core aptupdate
   core alias
@@ -124,21 +123,6 @@ fi
 ostatus=$(docker ps --format '{{.Names}}' | grep "ouroboros")
 if [[ "$ostatus" != "ouroboros" ]]; then ansible-playbook /opt/plexguide/menu/functions/ouroboros.yml; fi
 }
-gcecheck() {
-gcheck=$(dnsdomainname | tail -c 10)
-if [[ "$gcheck" == ".internal" ]]; then
-        if [[ "$(tail -n 1 /var/plexguide/gce.done)" == "1" ]]; then
-		tee <<-EOF
-        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-        📂  Google Cloud Feeder Edition SET!
-        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         NVME already mounted on /mnt with size $(df -h /mnt/ --total --local -x tmpfs | grep 'total' | awk '{print $2}')
-        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-		EOF
-		echo "YES" >/var/plexguide/pg.gce
-        else bash /opt/plexguide/menu/pggce/gcechecker.sh; fi
-else echo "NO" >/var/plexguide/pg.gce; fi
-}
 
 rollingpart() {
   touch ${abc}/install.roles
@@ -189,7 +173,7 @@ ansible-playbook /opt/plexguide/menu/installer/folders.yml
 prune() {
 ansible-playbook /opt/plexguide/menu/prune/main.yml
 }
-mergerfsinstall() { 
+mergerfsinstall() {
 ansible-playbook /opt/plexguide/menu/pg.yml --tags mergerfsinstall
 }
 motd() {

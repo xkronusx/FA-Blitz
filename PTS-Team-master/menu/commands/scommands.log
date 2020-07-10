@@ -1,37 +1,37 @@
 # Title:      PTS List commands
 # Author(s):  MrDoobPG
 ##############################################################
-    - name: PTSUpdate 
+    - name: PTSUpdate
       command: ptsupdate
       Info : Update PTS-Edition
 
     - name: PTS
-      command: plexguide 
+      command: plexguide
       Info: Open PTS Interface
 
     - name: server reboot
       command: reboot
       Info : Reboot the Server
-      
+
     - name: list systemd services
       command: slist
       Info: List all running services
-      
+
     - name: list pts commands
       command: scommands
       Info: open short command info
-      
+
     - name: update server
       command: update
       Info: update server to the latest packages / remove old apt-cache
-      
+
     - name: upgrade server
       command: upgrade
       Info: upgrade server to the latest packages / remove old apt-cache
-      
+
     - name: install appname
       command: install [[ name of app ]]
-      Info: Install [[ name of app ]] automatic 
+      Info: Install [[ name of app ]] automatic
 
     - name: autoremove unused packages after app install
       command: autoremove
@@ -51,15 +51,11 @@
 
     - name: Install mergerfs updater
       command: mgupdate
-      Info: Open mergerfs update interface    
-    
+      Info: Open mergerfs update interface
+
     - name: Install Backup & Restore
       command: backup
       Info: open Backup & Restore ( short command )
-
-    - name: GCE
-      command: gce
-      Info: open Google Cloud Engine ( short command )
 
     - name: purge old Journal files
       command: jpurge
@@ -76,6 +72,3 @@
     - name: automatic speedtest over speedtest.net
       command: ptsspeed
       Info: automatic speedtest over speedtest.net
-
-
-
