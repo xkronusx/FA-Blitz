@@ -6,14 +6,6 @@
 # GNU:        General Public License v3.0
 ################################################################################
 
-GCEtest(){
-gce=$(cat /var/plexguide/pg.server.deploy)
-
-if [[ $gce == "feeder" ]]; then
-mainstart2
-else mainstart1; fi
-}
-
 mainstart1() {
   tee <<-EOF
 
@@ -46,35 +38,5 @@ EOF
   5) bash /opt/plexguide/menu/pgbox/customparts/autobackup.sh ;;
   z) exit ;;
   Z) exit ;;
-  *) GCEtest ;;
   esac
 }
-
-mainstart2() {
-  tee <<-EOF
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 GCE APPS optimized Apps
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-[1] PTS GCE optimized Apps : GCE APPS
-
-[2] Apps                   : Removal
-
-[Z] Exit
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EOF
-
-  read -p '↘️  Type Number | Press [ENTER]: ' typed </dev/tty
-
-  case $typed in
-  1) bash /opt/plexguide/menu/pgbox/gce/gcecore.sh ;;
-  2) bash /opt/plexguide/menu/pgbox/remove/removal.sh ;;
-  z) exit ;;
-  Z) exit ;;
-  *) GCEtest ;;
-  esac
-}
-
-GCEtest

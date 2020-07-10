@@ -39,11 +39,6 @@ pgclonevars() {
     variable /var/plexguide/server.hd.path "/mnt"
     hdpath="$(cat /var/plexguide/server.hd.path)"
 
-    gce="/var/plexguide/gce.check"
-    if [[ ! -e $gce ]]; then
-       variable /var/plexguide/blitz.bw "1000M"
-    else variable /var/plexguide/blitz.bw "4500M"; fi
-
     variable /var/plexguide/oauth.check ""
     oauthcheck=$(cat /var/plexguide/oauth.check)
 
@@ -129,11 +124,6 @@ pgclonevars() {
         dversionoutput="Local"
     else dversionoutput="None"; fi
 
-    # # For Clone Clean
-    # if [[ ! -e $gce ]]; then
-       # variable /var/plexguide/cloneclean "600"
-    # else variable /var/plexguide/cloneclean "120"; fi
-
     variable /var/plexguide/vfs_bs "16M"
     vfs_bs=$(cat /var/plexguide/vfs_bs)
 
@@ -160,31 +150,6 @@ pgclonevars() {
 
     variable /var/plexguide/vfs_ll "ERROR"
     vfs_ll=$(cat /var/plexguide/vfs_ll)
-
-    if [[ ! -e $gce ]]; then
-       variable /var/plexguide/vfs_t "8"
-    else variable /var/plexguide/vfs_t "16"; fi
-    vfs_t=$(cat /var/plexguide/vfs_t)
-
-    if [[ ! -e $gce ]]; then
-       variable /var/plexguide/vfs_c "16"
-    else variable /var/plexguide/vfs_c "32"; fi
-    vfs_c=$(cat /var/plexguide/vfs_c)
-
-    if [[ ! -e $gce ]]; then    
-       variable /var/plexguide/vfs_mt "350G"
-    else variable /var/plexguide/vfs_mt "720G"; fi
-    vfs_mt=$(cat /var/plexguide/vfs_mt)
-
-    if [[ ! -e $gce ]]; then
-       variable /var/plexguide/vfs_test "4G"
-    else variable /var/plexguide/vfs_test "16G"; fi
-    vfs_test=$(cat /var/plexguide/vfs_test)
-
-    # For BWLimit
-    if [[ ! -e $gce ]]; then
-       variable /var/plexguide/timetable.bw "14:00,40M"
-    else variable /var/plexguide/timetable.bw "off"; fi
 
     # Upgrade old var format to new var format
 

@@ -227,7 +227,6 @@ EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [7]  PTS-WordPress  : Deploy WordPress Instances
 [8]  PTS-Vault      : Backup & Restore
-[9]  PTS-Cloud      : GCE & Virtual Instances
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [10] CBOX-PDUPE     : Find and delete duplicate files in Plex
 [11] Traktarr       : Fill Sonarr/Radarr over Trakt lists.
@@ -251,7 +250,6 @@ EOF
   6) clear && bash /opt/plexguide/menu/pgscan/pgscan.sh && clear && primestart ;;
   7) clear && bash /opt/plexguide/menu/pgcloner/pgpress.sh && clear && primestart ;;
   8) clear && bash /opt/plexguide/menu/pgcloner/pgvault.sh && clear && primestart ;;
-  9) clear && bash /opt/plexguide/menu/interface/cloudselect.sh && clear && primestart ;;
   10) clear && bash /opt/plexguide/menu/plex_dupe/plex_dupe.sh && clear && primestart ;;
   11) clear && bash /opt/plexguide/menu/traktarr/traktarr.sh && clear && primestart ;;
   12) clear && bash /opt/plexguide/menu/plexpatrol/plexpatrol.sh && clear && primestart ;;
