@@ -26,7 +26,6 @@ pginstall() {
   rollingpart
   portainer
   core motd
-  core gcloud
   core cleaner
   core serverid
   core prune
