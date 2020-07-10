@@ -88,8 +88,8 @@ updateprime() {
   ospgversion=$(lsb_release -si)
   if [[ "$ospgversion" == "Ubuntu" ]]; then
     echo "ubuntu" >${abc}/os.version
-  else 
-    echo "debian" >${abc}/os.version; 
+  else
+    echo "debian" >${abc}/os.version;
   fi
 
   echo "3" >${abc}/pg.mergerfsinstall
@@ -116,7 +116,7 @@ updateprime() {
 }
 oruborus() {
 wstatus=$(docker ps --format '{{.Names}}' | grep "watchtower")
-if [[ "$wstatus" == "watchtower" ]]; then 
+if [[ "$wstatus" == "watchtower" ]]; then
     docker stop watchtower >/dev/null 2>&1
 	docker rm watchtower >/dev/null 2>&1
 	ansible-playbook /opt/plexguide/menu/functions/ouroboros.yml
@@ -145,7 +145,7 @@ rollingpart() {
   rolenumber=3
   # Roles Ensure that PG Replicates and has once if missing; important for startup, cron and etc
   if [[ $(cat /var/plexguide/install.roles) != "$rolenumber" ]]; then
-    rm -rf /opt/{coreapps,communityapps,pgshield} 
+    rm -rf /opt/{coreapps,communityapps,pgshield}
     ansible-playbook /opt/plexguide/menu/pgbox/community/community.yml
     ansible-playbook /opt/plexguide/menu/pgbox/core/core.yml
 	clone
@@ -163,13 +163,13 @@ core() {
   fi
 }
 
-alias() { 
+alias() {
 ansible-playbook /opt/plexguide/menu/alias/alias.yml
 }
-aptupdate() { 
+aptupdate() {
 ansible-playbook /opt/plexguide/menu/pg.yml --tags update
 }
-cleaner() { 
+cleaner() {
 ansible-playbook /opt/plexguide/menu/pg.yml --tags autodelete,clean,journal
 }
 dependency() {
@@ -180,25 +180,22 @@ dependency() {
     ansible-playbook /opt/plexguide/menu/dependency/dependency.yml
   fi
 }
-docstart() { 
+docstart() {
 ansible-playbook /opt/plexguide/menu/pg.yml --tags docstart
 }
-folders() { 
+folders() {
 ansible-playbook /opt/plexguide/menu/installer/folders.yml
 }
-prune() { 
+prune() {
 ansible-playbook /opt/plexguide/menu/prune/main.yml
-}
-gcloud() { 
-ansible-playbook /opt/plexguide/menu/pg.yml --tags gcloud_sdk
 }
 mergerfsinstall() { 
 ansible-playbook /opt/plexguide/menu/pg.yml --tags mergerfsinstall
 }
-motd() { 
+motd() {
 ansible-playbook /opt/plexguide/menu/motd/motd.yml
 }
-mountcheck() { 
+mountcheck() {
 ansible-playbook /opt/plexguide/menu/installer/mcdeploy.yml
 }
 newinstall() {
@@ -210,8 +207,8 @@ newinstall() {
     if [[ ! -f "$file" ]]; then exit; fi
   fi
 }
-pgdeploy() { 
-touch ${abc}/pg.edition && bash /opt/plexguide/menu/start/start.sh 
+pgdeploy() {
+touch ${abc}/pg.edition && bash /opt/plexguide/menu/start/start.sh
 }
 pgedition() {
   file="${abc}/project.deployed"
@@ -226,7 +223,7 @@ portainer() {
   if [[ "$dstatus" != "portainer" ]]; then ansible-playbook /opt/plexguide/menu/functions/portainer.yml; fi
 }
 # Roles Ensure that PG Replicates and has once if missing; important for startup, cron and etc
-pgcore() { 
+pgcore() {
 file="${abc}/new.install"
 if [[ -f "$file" ]]; then ansible-playbook /opt/plexguide/menu/pgbox/core/core.yml; fi
 if [[ -f "$file" ]]; then ansible-playbook /opt/plexguide/menu/pgbox/community/community.yml; fi
@@ -246,7 +243,7 @@ if [[ -f "$file" ]]; then
      echo 'Traefik' >${abc}/pgcloner.projectname
      echo 'master' >${abc}/pgcloner.projectversion
      echo 'traefik.sh' >${abc}/pgcloner.startlink
-     ansible-playbook "/opt/plexguide/menu/pgcloner/clone/primary.yml"	 
+     ansible-playbook "/opt/plexguide/menu/pgcloner/clone/primary.yml"
 fi
 }
 pythonstart() {
