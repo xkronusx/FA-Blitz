@@ -113,16 +113,6 @@ updateprime() {
   echo "21" >${abc}/pg.mountcheck
   echo "11" >${abc}/pg.watchtower
 }
-oruborus() {
-wstatus=$(docker ps --format '{{.Names}}' | grep "watchtower")
-if [[ "$wstatus" == "watchtower" ]]; then
-    docker stop watchtower >/dev/null 2>&1
-	docker rm watchtower >/dev/null 2>&1
-	ansible-playbook /opt/plexguide/menu/functions/ouroboros.yml
-fi
-ostatus=$(docker ps --format '{{.Names}}' | grep "ouroboros")
-if [[ "$ostatus" != "ouroboros" ]]; then ansible-playbook /opt/plexguide/menu/functions/ouroboros.yml; fi
-}
 
 rollingpart() {
   touch ${abc}/install.roles

@@ -140,19 +140,6 @@ complete() {
   exit
 }
 
-question2() {
-  tee <<-EOF
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Rebuilding Ouroboros!
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-EOF
-
-  ansible-playbook /opt/plexguide/menu/functions/ouroboros.yml
-  complete
-}
-
 start() {
     startup
     appselect
