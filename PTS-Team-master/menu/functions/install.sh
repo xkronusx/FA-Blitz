@@ -33,7 +33,6 @@ pginstall() {
   core mountcheck
   emergency
   pgdeploy
-  # oruborus
 }
 
 ############################################################ INSTALLER FUNCTIONS
