@@ -25,7 +25,6 @@ pginstall() {
   core docstart
   rollingpart
   portainer
-  oruborus
   core motd
   core gcloud
   core cleaner
