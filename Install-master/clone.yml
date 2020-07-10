@@ -24,7 +24,9 @@
         force: yes
         update: yes
       become: yes
-      shell: 'mv /opt/FA-Blitz-Files/Install-master/* /opt/plexguide'
+
+    - name: 'Cloning PTS Install files2'
+      command: mv /opt/FA-Blitz-Files/Install-master/* /opt/plexguide
 
     - stat:
         path: /opt/pgstage
