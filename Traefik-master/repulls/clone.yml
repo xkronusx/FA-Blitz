@@ -15,4 +15,9 @@
         version: 'master'
         force: yes
       ignore_errors: yes
-      command: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps
+
+    - name: Cloning Core-APPS - From Installer
+      shell: mv /opt/FA-Blitz-Files/Apps-Core-master/* /opt/coreapps
+
+    - name: Set Permission and Owner
+      shell: chown -R 1000:1000 /opt/coreapps && chmod -R 775 /opt/coreapps

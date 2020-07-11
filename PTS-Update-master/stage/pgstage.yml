@@ -18,7 +18,12 @@
         force: yes
         update: yes
       become: yes
-      command: mv /opt/FA-Blitz-Files/Install-master/* /opt/pgstage
+
+    - name: 'Cloning PTS Install files'
+      shell: mv /opt/FA-Blitz-Files/Install-master/* /opt/pgstage
+
+    - name: Set Permission and Owner
+      shell: chown -R 1000:1000 /opt/pgstage && chmod -R 775 /opt/pgstage
 
     - stat:
         path: /opt/pgstage

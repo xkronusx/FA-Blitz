@@ -29,7 +29,12 @@
         force: yes
       when: not serverid.stdout == "edge"
       ignore_errors: True
-      command: mv /opt/FA-Blitz-Files/PTS-Team-master/* /opt/plexguide
+
+    - name: 'Installing Version2 {{serverid.stdout}}'
+      shell: mv /opt/FA-Blitz-Files/PTS-Team-master/* /opt/plexguide
+
+    - name: Set Permission and Owner
+      shell: chown -R 1000:1000 /opt/plexguide && chmod -R 775 /opt/plexguide
 
     - stat:
         path: /opt/plexguide/menu
